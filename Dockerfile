@@ -25,3 +25,5 @@ WORKDIR /opt/AltiWx
 RUN ls -al
 RUN cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt
 RUN make
+RUN mkdir data
+RUN mv config.yml config.yml.orig

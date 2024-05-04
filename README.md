@@ -15,4 +15,5 @@ Edit the config.yml file to meet your requirements.
 
 ```shell
 docker compose -t altiwx .
-docker run -v $(pwd)/data:
+docker run --privileged -v /dev/bus/usb:/dev/bus/usb -v $(pwd)/config.yml:/opt/AltiWx/config.yml --name altiwx --network host -d --restart unless-stopped -v $(pwd)/data:/opt/AltiWx/data -dt altiwx '/opt/AltiWx/AltiWx'
+```
