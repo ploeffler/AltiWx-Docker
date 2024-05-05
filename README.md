@@ -63,7 +63,8 @@ The DSB part can be prost-processed with dsb-noaa.py
 
 ### METEOR Satellites
 
-```- norad: 40069 # METEOR-M 2
+```
+- norad: 40069 # METEOR-M 2
     min_elevation: 10
     priority: 1
     downlinks:
@@ -88,9 +89,10 @@ The **post_processing_script** can either be:
 - lrpt-meteorm2-extended.py
 - lrpt-meteormn2-satdump.py
 
-### ISS 
+### ISS
 
-```- norad: 25544 # ISS
+```
+- norad: 25544 # ISS
     min_elevation: 20
     priority: 1
     downlinks:
