@@ -121,7 +121,7 @@ The **post_processing_script** can either be:
 After that having configured we are ready to go. Depending on your platform this will take several minutes:
 
 ```shell
-docker compose -t altiwx .
+docker build -t altiwx .
 docker run --privileged -v /dev/bus/usb:/dev/bus/usb -v $(pwd)/config.yml:/opt/AltiWx/config.yml --name altiwx --network host -d --restart unless-stopped -v $(pwd)/data:/opt/AltiWx/data -dt altiwx '/opt/AltiWx/AltiWx'
 ```
 
