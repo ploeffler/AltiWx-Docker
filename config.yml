@@ -3,9 +3,9 @@ station_name: My Station
 
 # Location used for pass prediction, altitude is in meters
 station:
-  latitude: 0.0
-  longitude: 0.0
-  altitude: 0
+  latitude: 47.1031561
+  longitude: 15.8218654 
+  altitude: 325
 
 # How often should TLEs be checked for updates against Celestrak?
 tle_update: 0 0 * * *

@@ -1,6 +1,8 @@
 # AltiWx-Docker
 
 This is a dockerized version of [AltiWx](https://github.com/altillimity/AltiWx), a software-package to decode NOAA and Meteor weathersatellites.
+The container is based on Debian:bullseye-slim.
+
 
 ## Installation
 

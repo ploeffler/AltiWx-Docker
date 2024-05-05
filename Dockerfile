@@ -1,7 +1,11 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 RUN apt-get update
 RUN apt-get dist-upgrade -y
-RUN apt-get install libspdlog-dev librtlsdr-dev libfmt-dev pybind11-dev python3-dev libliquid-dev cmake build-essential git libvolk1-dev libyaml-cpp-dev -y
+# RUN apt-get install libspdlog-dev librtlsdr-dev libfmt-dev pybind11-dev python3-dev libliquid-dev cmake build-essential git libvolk1-dev libyaml-cpp-dev archdetect -y
+
+RUN apt-get install libspdlog-dev librtlsdr-dev libfmt-dev pybind11-dev python3-dev libliquid-dev cmake build-essential git libvolk2-dev libyaml-cpp-dev -y
+
+RUN apt-get clean
 
 WORKDIR /opt
 RUN git clone https://github.com/la1k/libpredict
