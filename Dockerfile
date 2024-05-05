@@ -44,3 +44,12 @@ RUN git submodule update --init --recursive
 RUN cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt
 RUN make
 RUN make install
+
+WORKDIR /opt
+RUN apt-get install cmake git gcc libsndfile-dev libpng-dev -y
+RUN apt-get clean
+RUN git clone --recursive https://github.com/Xerbo/aptdec.git
+WORKDIR /opt/aptdec
+RUN cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt
+RUN make
+RUN make install
