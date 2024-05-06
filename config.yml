@@ -37,8 +37,8 @@ satellites:
     priority: 1
     downlinks:
       - name: LRPT
-        frequency: 137100000
-        bandwidth: 140000
+        frequency: 137900000
+        bandwidth: 100000
         doppler: false
         post_processing_script: lrpt-meteormn2-satdump.py
         output_extension: soft
@@ -55,7 +55,7 @@ satellites:
     downlinks:
       - name: LRPT
         frequency: 137900000
-        bandwidth: 140000
+        bandwidth: 100000
         doppler: false
         post_processing_script: lrpt-meteormn2-satdump.py
         output_extension: soft

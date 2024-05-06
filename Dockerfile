@@ -10,7 +10,7 @@ RUN wget https://www.libvolk.org/releases/volk-2.5.2.tar.gz
 RUN tar -xvzf volk-2.5.2.tar.gz
 WORKDIR /opt/volk-2.5.2
 RUN cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt
-RUN make
+RUN nproc | xargs -I % make -j%
 RUN make install
 RUN ldconfig
 WORKDIR /opt
@@ -20,7 +20,7 @@ WORKDIR /opt
 RUN git clone https://github.com/la1k/libpredict
 WORKDIR /opt/libpredict
 RUN cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt
-RUN make
+RUN nproc | xargs -I % make -j%
 RUN make install
 RUN ldconfig
 WORKDIR /opt
@@ -30,7 +30,7 @@ WORKDIR /opt
 RUN git clone https://github.com/altillimity/libdsp
 WORKDIR /opt/libdsp
 RUN cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt
-RUN make
+RUN nproc | xargs -I % make -j%
 RUN make install
 RUN ldconfig
 WORKDIR /opt
@@ -46,7 +46,7 @@ RUN git clone --depth=1 https://github.com/Digitelektro/MeteorDemod.git
 WORKDIR /opt/MeteorDemod
 RUN git submodule update --init --recursive
 RUN cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt
-RUN make
+RUN nproc | xargs -I % make -j%
 RUN make install
 
 WORKDIR /opt
@@ -55,7 +55,7 @@ RUN apt-get clean
 RUN git clone --recursive https://github.com/Xerbo/aptdec.git
 WORKDIR /opt/aptdec
 RUN cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt
-RUN make
+RUN nproc | xargs -I % make -j%
 RUN make install
 
 WORKDIR /opt
@@ -65,6 +65,6 @@ RUN mkdir build
 WORKDIR /opt/AltiWx
 RUN ls -al
 RUN cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt
-RUN make
+RUN nproc | xargs -I % make -j%
 RUN mkdir data
 RUN mv config.yml config.yml.orig
